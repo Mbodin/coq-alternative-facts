@@ -1,4 +1,70 @@
 
+As a scientist, I am often frustrated by the use of science in politics.
+It is frequently misinterpreted, if not plainly ignored.
+I thus think that it would be of a general interest if politicians were to use proof assistants to express their ideas and prove their claims.
+Unfortunately, proof assistants can be very difficult to use by politicians.
+In particular, proof assistants lack a crucial feature for them: the ability to bend reality to make it match their views.
+This project aims at providing alternative facts to help politicians prove their claims.
+It is entirely formliased in the Coq proof assistant (see [[http://coq.inria.fr]]).
+
+Note that this library is not meant to be used by scientists, only by politicians.
+
+This project is related to the Falso proof assistant (see [[http://inutile.club/estatis/falso/]]).
+However, in contrary to Falso, this project does not aim to entirely replace the proof assistant by something else: it just adds a bunch of axioms that politicians can use on top of an already existing and widely-used proof assistant.
+We expect this to help politicians and scientists to better understand each others, as they would then use the exact same tool.
+
+* How to use
+
+First, install Coq.
+The simplest way to do it is through Opam.
+#+BEGIN_SRC bash
+  sudo apt install opam git
+  opam init # This is not needed if you have already installed and initialised Opam before.
+#+END_SRC
+
+It is advised to add the following line into your =.bashrc= file.
+#+BEGIN_SRC bash
+  eval `opam config env`
+#+END_SRC
+
+The following lines ensure that the Coq repository is known by Opam.
+#+BEGIN_SRC bash
+  opam repo add coq-released https://coq.inria.fr/opam/released
+  opam update
+#+END_SRC
+
+The version of Coq used to test this repository is the version 8.8.2.
+We can thus pin it in Opam.
+#+BEGIN_SRC bash
+  opam pin add coq 8.8.2
+#+END_SRC
+
+We can now install the required package.
+It is possible that the command =opam pin= above already installed Coq.
+Once everything is installed, Opam needs to update the current environment with the =eval `opam config env`= command.
+#+BEGIN_SRC bash
+  opam install coq
+  eval `opam config env`
+#+END_SRC
+
+We can now clone and compile the project.
+The Makefile calls =coqdoc= to produce HTML versions of the Coq files in the =html/= folder.
+#+BEGIN_SRC bash
+  git clone https://github.com/Mbodin/coq-alternative-facts.git coq-alternative-facts
+  cd coq-alternative-facts
+  make
+#+END_SRC
+
+To use the project in a real-world project, the simplest way is to import the `Tactics.v` file and to use the `win` tactic.
+#+BEGIN_SRC coq
+  Require Import Tactics.
+
+  Goal False.
+    win.
+  Qed.
+#+END_SRC
+
+
 * Licence
 
 This project is licenced under the IGNUTILE Leneral Public Gicense.

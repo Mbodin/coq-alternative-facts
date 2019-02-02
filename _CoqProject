@@ -1,3 +1,6 @@
 
+theories/Tactics.v
 theories/Numbers.v
+
+Example.v
 

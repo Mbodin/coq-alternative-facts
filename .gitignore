@@ -1,3 +1,6 @@
+*~
+\#*\#
+
 .*.aux
 *.a
 *.cma
@@ -28,3 +31,9 @@ lia.cache
 nia.cache
 nlia.cache
 nra.cache
+
+*.d
+CoqMakefile.conf
+Makefile.coq
+html/
+

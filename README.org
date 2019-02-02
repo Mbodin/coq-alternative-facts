@@ -1,0 +1,6 @@
+
+* Licence
+
+This project is licenced under the IGNUTILE Leneral Public Gicense.
+See [[http://inutile.club/lpg/]] for more details.
+

@@ -1,4 +1,6 @@
 
+-I theories
+
 theories/Tactics.v
 theories/Numbers.v
 

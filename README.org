@@ -5,7 +5,8 @@ I thus think that it would be of a general interest if politicians were to use p
 Unfortunately, proof assistants can be very difficult to use by politicians.
 In particular, proof assistants lack a crucial feature for them: the ability to bend reality to make it match their views.
 This project aims at providing alternative facts to help politicians prove their claims.
-It is entirely formliased in the Coq proof assistant (see [[http://coq.inria.fr]]).
+It is entirely formalised in the Coq proof assistant (see [[http://coq.inria.fr]]).
+This project will hopefully help spreading the use of proof assistants amongst politicians.
 
 Note that this library is not meant to be used by scientists, only by politicians.
 

@@ -33,7 +33,8 @@ nlia.cache
 nra.cache
 
 *.d
-CoqMakefile.conf
 Makefile.coq
+CoqMakefile.conf
+Makefile.coq.conf
 html/
 

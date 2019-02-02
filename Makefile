@@ -6,7 +6,7 @@ AT=
 
 all: all_coq all_html
 
-.PHONY: all all_coq all_html doc tlc clean clean_all clean_tlc
+.PHONY: all all_coq all_html doc clean clean_all
 
 all_coq: Makefile.coq
 	${AT}+make -f Makefile.coq all
@@ -21,23 +21,11 @@ clean: Makefile.coq
 	${AT}rm -f Makefile.coq
 
 Makefile.coq: _CoqProject Makefile
-	${AT}coq_makefile -f _CoqProject \
-		| sed 's/$$(COQCHK) $$(COQCHKFLAGS) $$(COQLIBS)/$$(COQCHK) $$(COQCHKFLAGS) $$(subst -Q,-R,$$(COQLIBS))/' \
-		> Makefile.coq
+	${AT}coq_makefile -f _CoqProject -o Makefile.coq
 
 _CoqProject: ;
 
 Makefile: ;
 
 clean_all: clean clean_tlc
-
-tlc:
-	${AT}cd lib/tlc ; \
-		make ; \
-		cd ../..
-
-clean_tlc:
-	${AT}cd lib/tlc ; \
-		make clean ; \
-		cd ../..
 

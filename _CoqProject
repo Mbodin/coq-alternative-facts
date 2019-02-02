@@ -2,6 +2,11 @@
 -I theories
 
 theories/Tactics.v
+theories/Stupidity.v
+theories/Logic.v
+theories/Quantifiers.v
+theories/Circular.v
+theories/StrawMan.v
 theories/Numbers.v
 
 Example.v

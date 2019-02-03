@@ -2,7 +2,7 @@
 As a scientist, I am often frustrated by the use of science in politics.
 It is frequently misinterpreted, if not plainly ignored.
 I thus think that it would be of a general interest if politicians were to use proof assistants to express their ideas and prove their claims.
-Unfortunately, proof assistants can be very difficult to use by politicians.
+Unfortunately, proof assistants can be very difficult to use for politicians.
 In particular, proof assistants lack a crucial feature for them: the ability to bend reality to make it match their views.
 This project aims at providing alternative facts to help politicians prove their claims.
 It is entirely formalised in the Coq proof assistant (see [[http://coq.inria.fr]]).
@@ -12,7 +12,7 @@ Note that this library is not meant to be used by scientists, only by politician
 
 This project is related to the Falso proof assistant (see [[http://inutile.club/estatis/falso/]]).
 However, in contrary to Falso, this project does not aim to entirely replace the proof assistant by something else: it just adds a bunch of axioms that politicians can use on top of an already existing and widely-used proof assistant.
-We expect this to help politicians and scientists to better understand each others, as they would then use the exact same tool.
+I expect this to help politicians and scientists to better understand each others, as they can now use the exact same tool to communicate their claims.
 
 * How to use
 

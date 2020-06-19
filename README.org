@@ -1,52 +1,53 @@
 
-As a scientist, I am often frustrated by the use of science in politics.
+As a scientist, I am often frustrated by the use of Science in politics.
 It is frequently misinterpreted, if not plainly ignored.
-I thus think that it would be of a general interest if politicians were to use proof assistants to express their ideas and prove their claims.
+I thus think that it would be of general interest if politicians were to use proof assistants to express their ideas, and thus be able to prove their claims.
 Unfortunately, proof assistants can be very difficult to use for politicians.
 In particular, proof assistants lack a crucial feature for them: the ability to bend reality to make it match their views.
-This project aims at providing alternative facts to help politicians prove their claims.
+This project aims at providing alternative facts to help politicians prove their claims despite being contradicted by reality.
 It is entirely formalised in the Coq proof assistant (see [[http://coq.inria.fr]]).
 This project will hopefully help spreading the use of proof assistants amongst politicians.
 
 Note that this library is not meant to be used by scientists, only by politicians.
+Using this project in any scientific project might introduce inconsistent axioms.
+Use at your own risks.
 
 This project is related to the Falso proof assistant (see [[http://inutile.club/estatis/falso/]]).
 However, in contrary to Falso, this project does not aim to entirely replace the proof assistant by something else: it just adds a bunch of axioms that politicians can use on top of an already existing and widely-used proof assistant.
-I expect this to help politicians and scientists to better understand each others, as they can now use the exact same tool to communicate their claims.
+I expect this to help politicians and scientists to better understand each other, as they can now use the exact same tool to communicate their claims.
 
 * How to use
 
-The project comes with an `esy` packaging.
+The project comes with an =esy= packaging.
 
-The following programs are assumed to be installed: `git`, `curl`, `m4`, and `autoconf`.
+The following programs are assumed to be installed: =git=, =curl=, =m4=, and =autoconf=.
 These programs are used to fetch and compile dependencies.
 
-Installing `esy` itself can be done through `npm`.
+Installing =esy= itself can be done through =npm=.
 It should then look like something like that:
-```bash
+#+BEGIN_SRC bash
 sudo apt install npm git curl m4 autoconf
 sudo npm install --global esy@latest # Tested with version 0.6.2 of esy.
-```
-There are other ways to install `esy`: see <https://esy.sh/> for more information.
+#+END_SRC
+There are other ways to install =esy=: see <https://esy.sh/> for more information.
 
-Once `esy` is installed, simply type `esy` to download and install the dependencies and compile everything.
-Warning: compiling the dependencies requires having about 3 or 4 GB of RAM on your computer.
-```bash
+Once =esy= is installed, simply type =esy= to download and install the dependencies and compile everything.
+#+BEGIN_SRC bash
 esy
-```
+#+END_SRC
 
-To use the project in a real-world project, the simplest way is to import the `Tactics.v` file and to use the `win` tactic.
+To use the project in a real-world project, the simplest way is to import the =Tactics.v= file and to use the =win= tactic.
 #+BEGIN_SRC coq
-	From AlternativeFacts Require Import Tactics.
+From AlternativeFacts Require Import Tactics.
 
-	Goal False.
-		win.
-	Qed.
+Goal False.
+	win.
+Qed.
 #+END_SRC
 Please be aware that some of the introduced axioms may be inconsistent.  It is thus strongly advisable not to use this package in any scientific project: this project is only meant to ease the work of politicians wanting to express their arguments into the Coq proof assistant.
 
 * Licence
 
 This project is licenced under the IGNUTILE Leneral Public Gicense.
-See [[http://inutile.club/lpg/]] for more details.
+See <http://inutile.club/lpg/> for more details.
 

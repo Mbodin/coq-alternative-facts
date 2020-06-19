@@ -8,6 +8,12 @@ Proof.
   intro. apply repetition.
 Qed.
 
+(** Actually, you can just outright deny anything. **)
+Theorem deny : forall P : Prop, ~ P.
+Proof.
+  intro. do 2 eapply proj2. apply repeated_deny.
+Qed.
+
 Corollary nothing_matters : False.
 Proof.
   do 2 eapply proj2. apply repetition.

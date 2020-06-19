@@ -1,5 +1,5 @@
 
-Require Import Tactics.
+From AlternativeFacts Require Import Tactics.
 
 Parameter people : Type.
 

@@ -16,55 +16,34 @@ I expect this to help politicians and scientists to better understand each other
 
 * How to use
 
-First, install Coq.
-The simplest way to do it is through Opam.
-#+BEGIN_SRC bash
-  sudo apt install opam git
-  opam init # This is not needed if you have already installed and initialised Opam before.
-#+END_SRC
+The project comes with an `esy` packaging.
 
-It is advised to add the following line into your =.bashrc= file.
-#+BEGIN_SRC bash
-  eval `opam config env`
-#+END_SRC
+The following programs are assumed to be installed: `git`, `curl`, `m4`, and `autoconf`.
+These programs are used to fetch and compile dependencies.
 
-The following lines ensure that the Coq repository is known by Opam.
-#+BEGIN_SRC bash
-  opam repo add coq-released https://coq.inria.fr/opam/released
-  opam update
-#+END_SRC
+Installing `esy` itself can be done through `npm`.
+It should then look like something like that:
+```bash
+sudo apt install npm git curl m4 autoconf
+sudo npm install --global esy@latest # Tested with version 0.6.2 of esy.
+```
+There are other ways to install `esy`: see <https://esy.sh/> for more information.
 
-The version of Coq used to test this repository is the version 8.8.2.
-We can thus pin it in Opam.
-#+BEGIN_SRC bash
-  opam pin add coq 8.8.2
-#+END_SRC
-
-We can now install the required package.
-It is possible that the command =opam pin= above already installed Coq.
-Once everything is installed, Opam needs to update the current environment with the =eval `opam config env`= command.
-#+BEGIN_SRC bash
-  opam install coq
-  eval `opam config env`
-#+END_SRC
-
-We can now clone and compile the project.
-The Makefile calls =coqdoc= to produce HTML versions of the Coq files in the =html/= folder.
-#+BEGIN_SRC bash
-  git clone https://github.com/Mbodin/coq-alternative-facts.git coq-alternative-facts
-  cd coq-alternative-facts
-  make
-#+END_SRC
+Once `esy` is installed, simply type `esy` to download and install the dependencies and compile everything.
+Warning: compiling the dependencies requires having about 3 or 4 GB of RAM on your computer.
+```bash
+esy
+```
 
 To use the project in a real-world project, the simplest way is to import the `Tactics.v` file and to use the `win` tactic.
 #+BEGIN_SRC coq
-  Require Import Tactics.
+	From AlternativeFacts Require Import Tactics.
 
-  Goal False.
-    win.
-  Qed.
+	Goal False.
+		win.
+	Qed.
 #+END_SRC
-
+Please be aware that some of the introduced axioms may be inconsistent.  It is thus strongly advisable not to use this package in any scientific project: this project is only meant to ease the work of politicians wanting to express their arguments into the Coq proof assistant.
 
 * Licence
 

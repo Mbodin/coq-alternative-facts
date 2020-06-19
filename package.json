@@ -1,0 +1,14 @@
+{
+	"name": "coq-alternative-facts",
+	"version": "1.0",
+	"description": "Coq for politicians",
+	"license": "IGNUTILE-Leneral-Public-Gicense",
+	"esy": {
+		"build": "make",
+		"buildsInSource": "_build"
+	},
+	"dependencies": {
+		"@opam/dune": "~2.3",
+		"@opam/coq": "8.8.2"
+	}
+}

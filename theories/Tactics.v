@@ -1,5 +1,5 @@
 
-Require Stupidity Logic Quantifiers Circular StrawMan Numbers.
+From AlternativeFacts Require Stupidity Logic Quantifiers Circular StrawMan Numbers.
 Require Import Coq.Numbers.BinNums.
 
 

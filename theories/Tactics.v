@@ -15,6 +15,7 @@ Require Import Coq.Numbers.BinNums.
   It tries to use relevant hypotheses as far as can be done. **)
 Ltac win :=
   try match goal with
+      | _ : context [ false ] |- ~ _ => apply Feelings.nihilism
       | |- ~ _ => apply Repeat.deny
       end;
   let t :=
